@@ -1,0 +1,21 @@
+// color contexts
+$contexts: (
+  "primary": (
+    "main": var(--context-primary-main),
+    "contrast": var(--context-primary-contrast),
+    "accent": var(--context-primary-accent),
+    "tone": var(--context-primary-tone),
+  ),
+  "secondary": (
+    "main": var(--context-secondary-main),
+    "contrast": var(--context-secondary-contrast),
+    "accent": var(--context-secondary-accent),
+    "tone": var(--context-secondary-tone),
+  ),
+  "tertiary": (
+    "main": var(--context-tertiary-main),
+    "contrast": var(--context-tertiary-contrast),
+    "accent": var(--context-tertiary-accent),
+    "tone": var(--context-tertiary-tone),
+  ),
+);

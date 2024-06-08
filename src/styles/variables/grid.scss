@@ -1,0 +1,20 @@
+@use "styles/functions/units" as *;
+
+// grid columns
+$grid-columns: 12;
+
+// grid containers
+$gridContainer-none: calc(100% - #{rem(32)});
+$gridContainer-tablet: calc(100% - #{rem(48)});
+$gridContainer-laptop: calc(100% - #{rem(192)});
+$gridContainer-desktop: calc(100% - #{rem(412)});
+
+$gridContainers: (
+  "none": $gridContainer-none,
+  "tablet": $gridContainer-tablet,
+  "laptop": $gridContainer-laptop,
+  "desktop": $gridContainer-desktop,
+);
+
+// grid max widths
+$gridMaxWidth: 100%;

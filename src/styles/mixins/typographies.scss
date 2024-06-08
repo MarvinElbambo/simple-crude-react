@@ -1,0 +1,56 @@
+@use "styles/functions/units" as *;
+@use "styles/variables/general" as *;
+
+@mixin typography-bodySmall() {
+  font-size: rem(12);
+  font-weight: $fontWeight-regular;
+  line-height: 1;
+}
+
+@mixin typography-bodyMedium() {
+  font-size: rem(16);
+  font-weight: $fontWeight-regular;
+  line-height: 1;
+}
+
+@mixin typography-bodyLarge() {
+  font-size: rem(20);
+  font-weight: $fontWeight-regular;
+  line-height: 1;
+}
+
+@mixin typography-headlineXSmall() {
+  font-size: rem(24);
+  font-weight: $fontWeight-medium;
+  line-height: 1;
+}
+
+@mixin typography-headlineSmall() {
+  font-size: rem(28);
+  font-weight: $fontWeight-medium;
+  line-height: 1;
+}
+
+@mixin typography-headlineMedium() {
+  font-size: rem(32);
+  font-weight: $fontWeight-medium;
+  line-height: 1;
+}
+
+@mixin typography-headlineLarge() {
+  font-size: rem(36);
+  font-weight: $fontWeight-medium;
+  line-height: 1;
+}
+
+@mixin typography-headlineXLarge() {
+  font-size: rem(40);
+  font-weight: $fontWeight-medium;
+  line-height: 1;
+}
+
+@mixin typography-headlineXXLarge() {
+  font-size: rem(44);
+  font-weight: $fontWeight-medium;
+  line-height: 1;
+}

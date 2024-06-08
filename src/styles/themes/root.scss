@@ -1,0 +1,27 @@
+@use "styles/variables/palette" as *;
+
+:root {
+  // base
+  --context-main: #{$palette-white};
+  --context-contrast: #{$palette-black300};
+  --context-accent: #{$palette-blue300};
+  --context-tone: #{$palette-gray500};
+
+  // primary
+  --context-primary-main: #{$palette-white};
+  --context-primary-contrast: #{$palette-black300};
+  --context-primary-accent: #{$palette-blue300};
+  --context-primary-tone: #{$palette-gray500};
+
+  // secondary
+  --context-secondary-main: #{$palette-blue300};
+  --context-secondary-contrast: #{$palette-white};
+  --context-secondary-accent: #{$palette-white};
+  --context-secondary-tone: #{$palette-white};
+
+  // tertiary
+  --context-tertiary-main: #{$palette-black300};
+  --context-tertiary-contrast: #{$palette-white};
+  --context-tertiary-accent: #{$palette-white};
+  --context-tertiary-tone: #{$palette-white};
+}

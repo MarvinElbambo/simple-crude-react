@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "styles/functions/units" as *;
+@use "styles/variables/contexts" as *;
+@use "styles/variables/general" as *;
+@use "styles/variables/palette" as *;
+
+@mixin context($value: "primary") {
+  $context: map.get($contexts, $value);
+
+  --context-main: #{map.get($context, "main")};
+  --context-contrast: #{map.get($context, "contrast")};
+  --context-accent: #{map.get($context, "accent")};
+  --context-tone: #{map.get($context, "tone")};
+}
+
+@mixin context-wrapper($value: "color") {
+  @each $key, $context in $contexts {
+    [data-#{$value}="#{$key}"] .component {
+      @include context($key);
+    }
+  }
+}
+
+@mixin margin-remove() {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin stroke-shadow($width, $color) {
+  text-shadow:
+    -#{$width} -#{$width} 0 $color,
+    0 -#{$width} 0 $color,
+    $width -#{$width} 0 $color,
+    $width 0 0 $color,
+    $width $width 0 $color,
+    0 $width 0 $color,
+    -#{$width} $width 0 $color,
+    -#{$width} 0 0 $color;
+}
+
+@mixin contentEllipsis($clampLine: 1) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $clampLine;
+  overflow: hidden;
+}

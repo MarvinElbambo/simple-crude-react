@@ -1,0 +1,55 @@
+@use "styles/functions/units" as *;
+
+// border radiuses
+$borderRadius-none: 0;
+$borderRadius-sm: rem(2);
+$borderRadius-md: rem(4);
+$borderRadius-lg: rem(8);
+$borderRadius-xl: rem(16);
+$borderRadius-round: 100%;
+
+// border widths
+$borderWidth-sm: 1px;
+$borderWidth-md: rem(2);
+$borderWidth-lg: rem(4);
+
+// box shadows/ AKA ESB shadow
+$box-shadow:
+  0 0 rem(20) rgba(7, 31, 71, 5%),
+  0 rem(14) rem(24) rgba(7, 31, 71, 5%),
+  0 rem(4) rem(4) rgba(7, 31, 71, 5%);
+
+// contexts
+$context-main: var(--context-main);
+$context-contrast: var(--context-contrast);
+$context-accent: var(--context-accent);
+$context-tone: var(--context-tone);
+
+@debug $borderWidth-sm;
+
+// font weights
+$fontWeight-light: 300;
+$fontWeight-regular: 400;
+$fontWeight-medium: 500;
+$fontWeight-bold: 700;
+
+// spacings
+
+$spacing-xs: rem(4);
+$spacing-sm: rem(8);
+$spacing-md: rem(16);
+$spacing-lg: rem(32);
+
+// transition
+$easing-base: ease-in-out;
+
+$speed-normal: 0.25s;
+$speed-slow: 0.5s;
+$speed-fast: 0.125s;
+
+// z indexes
+$zIndex-navigation: 500;
+
+//button height
+$button-height-large: rem(40);
+$button-height-small: rem(36);
