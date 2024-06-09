@@ -6,6 +6,7 @@ import Button from "@/components/button/button";
 import { Inter } from "next/font/google";
 import Row from "@/components/grid/row/row";
 import Column from "@/components/grid/column/column";
+import ItemCard from "@/components/card/item-card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,15 +28,24 @@ const HomePage = () => {
 
         <Container className={styles.tableContainer}>
           <Row>
-            <Column width={{ tablet: 6 }}>test</Column>
-            <Column width={{ tablet: 6 }}>test</Column>
-            <Column width={{ tablet: 4 }}>test</Column>
-            <Column width={{ tablet: 4 }}>test</Column>
-            <Column width={{ tablet: 4 }}>test</Column>
-            <Column width={{ tablet: 3 }}>test</Column>
-            <Column width={{ tablet: 3 }}>test</Column>
-            <Column width={{ tablet: 3 }}>test</Column>
-            <Column width={{ tablet: 3 }}>test</Column>
+            <Column width={{ tablet: 4, laptop: 3 }}>
+              <ItemCard />
+            </Column>
+            <Column width={{ tablet: 4, laptop: 3 }}>
+              <ItemCard />
+            </Column>
+            <Column width={{ tablet: 4, laptop: 3 }}>
+              <ItemCard />
+            </Column>
+            <Column width={{ tablet: 4, laptop: 3 }}>
+              <ItemCard />
+            </Column>
+            <Column width={{ tablet: 4, laptop: 3 }}>
+              <ItemCard />
+            </Column>
+            <Column width={{ tablet: 4, laptop: 3 }}>
+              <ItemCard />
+            </Column>
           </Row>
         </Container>
       </main>

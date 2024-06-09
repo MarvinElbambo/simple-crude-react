@@ -1,0 +1,27 @@
+@use "styles/setup" as *;
+
+.component {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  width: 100%;
+  padding: $spacing-sm;
+  border-radius: $borderRadius-lg;
+  box-shadow: $box-shadow;
+
+  .devider {
+    background-color: $context-main;
+    margin: $spacing-xs;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  .actionButton {
+    flex-grow: 1;
+  }
+}
