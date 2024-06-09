@@ -1,8 +1,13 @@
+import { useState } from "react";
 import Button from "../button/button";
+import Modal from "../modal/modal";
 import Typography from "../typography/typography";
 import styles from "./item-card.module.scss";
+import EditForm from "../forms/edit-form";
 
 const ItemCard = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
   return (
     <div className={styles.component}>
       <Typography
@@ -31,7 +36,16 @@ const ItemCard = () => {
           title="Edit Item"
           variant="success"
           text="Edit"
+          onClick={() => setIsOpenModal(true)}
         />
+
+        <Modal
+          isOpen={isOpenModal}
+          title="Update item"
+          onClose={() => setIsOpenModal(false)}
+        >
+          <EditForm />
+        </Modal>
 
         <Button
           className={styles.actionButton}

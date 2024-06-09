@@ -8,6 +8,7 @@ import Row from "@/components/grid/row/row";
 import Column from "@/components/grid/column/column";
 import ItemCard from "@/components/card/item-card";
 import Modal from "@/components/modal/modal";
+import CreateForm from "@/components/forms/create-form";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ const HomePage = () => {
             type="button"
             variant="success"
             text="Add new item"
+            title="Add new item"
             onClick={() => setIsOpenCreateItem(true)}
           />
 
@@ -37,7 +39,9 @@ const HomePage = () => {
             isOpen={isOpenCreateItem}
             title="Create new item"
             onClose={() => setIsOpenCreateItem(false)}
-          />
+          >
+            <CreateForm />
+          </Modal>
         </Container>
 
         <Container className={styles.tableContainer}>

@@ -13,33 +13,37 @@ interface ModalProps {
 
 const Modal = ({ isOpen, children, className, title, onClose }: ModalProps) => {
   return (
-    <div
-      className={classNames(
-        styles.component,
-        isOpen && styles.isOpen,
-        className
-      )}
-    >
-      <header className={styles.modalHeader}>
-        <Typography
-          tag="h2"
-          tagStyle="headlineMedium"
-          variant="medium"
-          text={title}
-        />
-
-        <button title="Close button" className={styles.closeButton}>
+    <>
+      <div
+        className={classNames(
+          styles.component,
+          isOpen && styles.isOpen,
+          className
+        )}
+      >
+        <header className={styles.modalHeader}>
           <Typography
+            tag="h2"
             tagStyle="headlineMedium"
-            variant="light"
-            text="X"
-            onClick={onClose}
+            variant="medium"
+            text={title}
           />
-        </button>
-      </header>
 
-      <div className={styles.modalBody}>{children}</div>
-    </div>
+          <button title="Close button" className={styles.closeButton}>
+            <Typography
+              tagStyle="headlineMedium"
+              variant="light"
+              text="X"
+              onClick={onClose}
+            />
+          </button>
+        </header>
+
+        <div className={styles.modalBody}>{children}</div>
+      </div>
+
+      {isOpen && <div className={styles.curtain} onClick={onClose} />}
+    </>
   );
 };
 

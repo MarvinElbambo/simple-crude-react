@@ -15,6 +15,7 @@
   transition: transform $speed-normal $easing-base;
   box-shadow: $box-shadow;
   padding: $spacing-sm;
+  z-index: calc($zIndex-modal + 10);
 
   @include breakpoint-up($breakpoint-tablet) {
     width: rem(400);
@@ -39,4 +40,10 @@
 
 .component.isOpen {
   transform: translateX(0);
+}
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: $zIndex-modal;
 }

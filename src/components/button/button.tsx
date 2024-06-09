@@ -3,7 +3,8 @@ import styles from "./button.module.scss";
 import classNames from "classnames";
 import { toUpperCase } from "lib/functions/string-functions";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: String;
   variant?:
     | "primary"
