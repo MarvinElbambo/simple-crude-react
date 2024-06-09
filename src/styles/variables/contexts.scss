@@ -3,19 +3,33 @@ $contexts: (
   "primary": (
     "main": var(--context-primary-main),
     "contrast": var(--context-primary-contrast),
-    "accent": var(--context-primary-accent),
-    "tone": var(--context-primary-tone),
   ),
   "secondary": (
     "main": var(--context-secondary-main),
     "contrast": var(--context-secondary-contrast),
-    "accent": var(--context-secondary-accent),
-    "tone": var(--context-secondary-tone),
   ),
-  "tertiary": (
-    "main": var(--context-tertiary-main),
-    "contrast": var(--context-tertiary-contrast),
-    "accent": var(--context-tertiary-accent),
-    "tone": var(--context-tertiary-tone),
+  "success": (
+    "main": var(--context-success-main),
+    "contrast": var(--context-success-contrast),
+  ),
+  "danger": (
+    "main": var(--context-danger-main),
+    "contrast": var(--context-danger-contrast),
+  ),
+  "warning": (
+    "main": var(--context-warning-main),
+    "contrast": var(--context-warning-contrast),
+  ),
+  "info": (
+    "main": var(--context-info-main),
+    "contrast": var(--context-info-contrast),
+  ),
+  "light": (
+    "main": var(--context-light-main),
+    "contrast": var(--context-light-contrast),
+  ),
+  "dark": (
+    "main": var(--context-dark-main),
+    "contrast": var(--context-dark-contrast),
   ),
 );

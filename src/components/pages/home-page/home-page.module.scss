@@ -1,0 +1,16 @@
+@use "styles/setup" as *;
+
+.header {
+  @include context("dark");
+  padding: $spacing-sm 0;
+  background-color: $context-main;
+  color: $context-contrast;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}

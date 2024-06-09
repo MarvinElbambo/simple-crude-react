@@ -6,8 +6,8 @@ $grid-columns: 12;
 // grid containers
 $gridContainer-none: calc(100% - #{rem(32)});
 $gridContainer-tablet: calc(100% - #{rem(48)});
-$gridContainer-laptop: calc(100% - #{rem(192)});
-$gridContainer-desktop: calc(100% - #{rem(412)});
+$gridContainer-laptop: calc(100% - #{rem(64)});
+$gridContainer-desktop: calc(100% - #{rem(80)});
 
 $gridContainers: (
   "none": $gridContainer-none,

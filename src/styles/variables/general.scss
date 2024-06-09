@@ -13,17 +13,13 @@ $borderWidth-sm: 1px;
 $borderWidth-md: rem(2);
 $borderWidth-lg: rem(4);
 
-// box shadows/ AKA ESB shadow
-$box-shadow:
-  0 0 rem(20) rgba(7, 31, 71, 5%),
-  0 rem(14) rem(24) rgba(7, 31, 71, 5%),
-  0 rem(4) rem(4) rgba(7, 31, 71, 5%);
+// box shadows
+$box-shadow: 0 0 rem(20) rgba(7, 31, 71, 5%),
+  0 rem(14) rem(24) rgba(7, 31, 71, 5%), 0 rem(4) rem(4) rgba(7, 31, 71, 5%);
 
 // contexts
 $context-main: var(--context-main);
 $context-contrast: var(--context-contrast);
-$context-accent: var(--context-accent);
-$context-tone: var(--context-tone);
 
 @debug $borderWidth-sm;
 
@@ -35,9 +31,9 @@ $fontWeight-bold: 700;
 
 // spacings
 
-$spacing-xs: rem(4);
-$spacing-sm: rem(8);
-$spacing-md: rem(16);
+$spacing-xs: rem(8);
+$spacing-sm: rem(16);
+$spacing-md: rem(24);
 $spacing-lg: rem(32);
 
 // transition

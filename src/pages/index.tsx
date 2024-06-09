@@ -1,7 +1,5 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import HomePage from "@/components/pages/home-page/home-page";
 
 export default function Home() {
   return (
@@ -12,7 +10,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={inter.className}>Simple Crud React</main>
+
+      <HomePage />
     </>
   );
 }

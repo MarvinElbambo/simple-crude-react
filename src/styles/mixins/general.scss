@@ -32,15 +32,9 @@
 }
 
 @mixin stroke-shadow($width, $color) {
-  text-shadow:
-    -#{$width} -#{$width} 0 $color,
-    0 -#{$width} 0 $color,
-    $width -#{$width} 0 $color,
-    $width 0 0 $color,
-    $width $width 0 $color,
-    0 $width 0 $color,
-    -#{$width} $width 0 $color,
-    -#{$width} 0 0 $color;
+  text-shadow: -#{$width} -#{$width} 0 $color, 0 -#{$width} 0 $color,
+    $width -#{$width} 0 $color, $width 0 0 $color, $width $width 0 $color,
+    0 $width 0 $color, -#{$width} $width 0 $color, -#{$width} 0 0 $color;
 }
 
 @mixin contentEllipsis($clampLine: 1) {

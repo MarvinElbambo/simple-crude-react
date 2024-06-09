@@ -1,0 +1,27 @@
+@use "styles/setup" as *;
+@use "sass:map";
+
+.component {
+  display: flex;
+  width: 100%;
+
+  @each $breakpointsKey, $breakpointsValue in $breakpoints {
+    @if $breakpointsKey != "none" {
+      @include breakpoint-up(map.get($breakpoints, $breakpointsKey)) {
+        @for $span from 1 through $grid-columns {
+          &.is-#{$span}-column-#{$breakpointsKey} {
+            width: calc(
+              (
+                (
+                    100% -
+                      (#{$spacing-xs} * ((#{$grid-columns} / #{$span}) - 1))
+                  ) /
+                  (#{$grid-columns} / #{$span})
+              )
+            );
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use "styles/setup" as *;
+
+.component {
+  @include typography-bodyMedium();
+
+  &.isBodySmall {
+    @include typography-bodySmall();
+  }
+
+  &.isBodyMedium {
+    @include typography-bodyMedium();
+  }
+
+  &.isBodyLarge {
+    @include typography-bodyLarge();
+  }
+
+  &.isHeadlineXSmall {
+    @include typography-headlineXSmall();
+  }
+
+  &.isHeadlineSmall {
+    @include typography-headlineSmall();
+  }
+
+  &.isHeadlineMedium {
+    @include typography-headlineMedium();
+  }
+
+  &.isHeadlineLarge {
+    @include typography-headlineLarge();
+  }
+
+  &.isHeadlineXLarge {
+    @include typography-headlineXLarge();
+  }
+
+  &.isHeadlineXXLarge {
+    @include typography-headlineXXLarge();
+  }
+
+  &.isLight {
+    font-weight: $fontWeight-light;
+  }
+
+  &.isRegular {
+    font-weight: $fontWeight-regular;
+  }
+
+  &.isMedium {
+    font-weight: $fontWeight-medium;
+  }
+
+  &.isBold {
+    font-weight: $fontWeight-bold;
+  }
+}

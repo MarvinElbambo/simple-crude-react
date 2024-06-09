@@ -1,0 +1,59 @@
+@use "styles/setup" as *;
+
+.component {
+  @include context("primary");
+  @include typography-bodyMedium();
+
+  background-color: $context-main;
+  color: $context-contrast;
+  padding: $spacing-xs $spacing-sm;
+  transition: background-color $speed-normal $easing-base;
+  text-decoration: none;
+  display: flex;
+  max-height: $button-height-small;
+  width: fit-content;
+  font-family: inherit;
+  font-style: inherit;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: $borderRadius-lg;
+  border: none;
+  cursor: pointer;
+
+  @include breakpoint-up($breakpoint-tablet) {
+    min-height: $button-height-large;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.component.isSecondary {
+  @include context("secondary");
+}
+
+.component.isSuccess {
+  @include context("success");
+}
+
+.component.isDanger {
+  @include context("danger");
+}
+
+.component.isWarning {
+  @include context("warning");
+}
+
+.component.isInfo {
+  @include context("info");
+}
+
+.component.isLight {
+  @include context("light");
+}
+
+.component.isDark {
+  @include context("dark");
+}
