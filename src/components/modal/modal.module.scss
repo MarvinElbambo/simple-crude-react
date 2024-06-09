@@ -1,0 +1,42 @@
+@use "styles/setup" as *;
+
+.component {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: $context-main;
+  color: $context-contrast;
+  transform: translateX(100%);
+  transition: transform $speed-normal $easing-base;
+  box-shadow: $box-shadow;
+  padding: $spacing-sm;
+
+  @include breakpoint-up($breakpoint-tablet) {
+    width: rem(400);
+  }
+
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .closeButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .modalBody {
+    flex-grow: 1;
+  }
+}
+
+.component.isOpen {
+  transform: translateX(0);
+}

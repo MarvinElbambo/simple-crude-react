@@ -28,7 +28,7 @@ type TagStyles =
   | "headlineXLarge"
   | "headlineXXLarge";
 
-export interface TypographyProps {
+export interface TypographyProps extends React.HtmlHTMLAttributes<HTMLElement> {
   children?: ReactNode;
   className?: string;
   text?: string;
@@ -44,11 +44,13 @@ const Typography = ({
   tag = "span",
   tagStyle,
   variant,
+  ...props
 }: TypographyProps) => {
   const Tag = tag;
 
   return (
     <Tag
+      {...props}
       className={classNames(
         styles.component,
         tagStyle && styles[`is${toUpperCase(tagStyle, "first")}`],
