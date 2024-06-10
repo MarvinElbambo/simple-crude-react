@@ -8,6 +8,7 @@ import {
   remove,
   onValue,
 } from "firebase/database";
+import { useCreateFormModal, useEditFormModal } from "@/state/store";
 
 export interface Item {
   category: string;
@@ -25,9 +26,10 @@ export interface ItemData extends Item {
 export const createData = async (item: Item) => {
   const db = getDatabase(app);
   const newDocRef = push(ref(db, "menu/items"));
+  const setIsOpenCreateFormModal = useCreateFormModal.getState().setIsOpen;
 
   set(newDocRef, item)
-    .then(() => alert("data save successfully"))
+    .then(() => setIsOpenCreateFormModal(false))
     .catch((error) => alert(`error message: ${error.message}`));
 };
 
@@ -64,9 +66,10 @@ export const updateData = async (item: Item, itemId?: string) => {
 
   const db = getDatabase(app);
   const dbDataRef = ref(db, `menu/items/${itemId}`);
+  const setIsOpenEditFormmModal = useEditFormModal.getState().setIsOpen;
 
   set(dbDataRef, item)
-    .then(() => alert("data updated successfully"))
+    .then(() => setIsOpenEditFormmModal(false))
     .catch((error) => alert(`error message: ${error.message}`));
 };
 

@@ -1,15 +1,19 @@
-import { useState } from "react";
 import Button from "../button/button";
-import Modal from "../modal/modal";
 import Typography from "../typography/typography";
 import styles from "./item-card.module.scss";
-import Form from "../form/form";
 import { ItemData, deleteData, updateData } from "@/firebase/firbase-method";
+import { useEditFormModal } from "@/state/store";
 
 interface ItemCard extends ItemData {}
 
 const ItemCard = (props: ItemCard) => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  const setIsOpenEditFormModal = useEditFormModal((state) => state.setIsOpen);
+  const seteditFormModal = useEditFormModal((state) => state.setItemData);
+
+  const handleEditButtonClick = () => {
+    setIsOpenEditFormModal(true);
+    seteditFormModal(props);
+  };
 
   return (
     <div className={styles.component}>
@@ -57,25 +61,8 @@ const ItemCard = (props: ItemCard) => {
           title="Edit Item"
           variant="success"
           text="Edit"
-          onClick={() => setIsOpenModal(true)}
+          onClick={handleEditButtonClick}
         />
-
-        <Modal
-          isOpen={isOpenModal}
-          title="Update item"
-          onClose={() => setIsOpenModal(false)}
-        >
-          <Form
-            onFormSubmit={updateData}
-            button={{
-              type: "submit",
-              variant: "success",
-              text: "Update",
-              title: "Update item",
-            }}
-            item={props}
-          />
-        </Modal>
 
         <Button
           className={styles.actionButton}
