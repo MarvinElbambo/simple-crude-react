@@ -9,6 +9,7 @@ import {
   onValue,
 } from "firebase/database";
 import { useCreateFormModal, useEditFormModal } from "@/state/store";
+import toast from "react-hot-toast";
 
 export interface Item {
   category: string;
@@ -29,8 +30,11 @@ export const createData = async (item: Item) => {
   const setIsOpenCreateFormModal = useCreateFormModal.getState().setIsOpen;
 
   set(newDocRef, item)
-    .then(() => setIsOpenCreateFormModal(false))
-    .catch((error) => alert(`error message: ${error.message}`));
+    .then(() => {
+      setIsOpenCreateFormModal(false);
+      toast.success("Item create successfully");
+    })
+    .catch((error) => toast.error(`error message: ${error.message}`));
 };
 
 export const useReadData = (): ItemData[] => {
@@ -69,8 +73,11 @@ export const updateData = async (item: Item, itemId?: string) => {
   const setIsOpenEditFormmModal = useEditFormModal.getState().setIsOpen;
 
   set(dbDataRef, item)
-    .then(() => setIsOpenEditFormmModal(false))
-    .catch((error) => alert(`error message: ${error.message}`));
+    .then(() => {
+      setIsOpenEditFormmModal(false);
+      toast.success("Item updated successfully");
+    })
+    .catch((error) => toast.error(`error message: ${error.message}`));
 };
 
 export const deleteData = async (itemId: string) => {
@@ -78,6 +85,6 @@ export const deleteData = async (itemId: string) => {
   const dbDataRef = ref(db, `menu/items/${itemId}`);
 
   await remove(dbDataRef)
-    .then(() => alert("data deleted successfully"))
-    .catch((error) => alert(`error message: ${error.message}`));
+    .then(() => toast.success("Item Deleted successfully"))
+    .catch((error) => toast.error(`error message: ${error.message}`));
 };

@@ -8,6 +8,7 @@ import ItemsList from "@/components/items-list/items-list";
 import { createData, updateData } from "@/firebase/firbase-method";
 import Form from "@/components/form/form";
 import { useCreateFormModal, useEditFormModal } from "@/state/store";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,6 +79,8 @@ const HomePage = () => {
             item={editFormModalItem}
           />
         </Modal>
+
+        <Toaster />
       </main>
     </>
   );
