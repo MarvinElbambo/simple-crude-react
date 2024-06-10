@@ -4,12 +4,8 @@ import Typography from "@/components/typography/typography";
 import styles from "./home-page.module.scss";
 import Button from "@/components/button/button";
 import { Inter } from "next/font/google";
-import Row from "@/components/grid/row/row";
-import Column from "@/components/grid/column/column";
-import ItemCard from "@/components/card/item-card";
 import Modal from "@/components/modal/modal";
 import ItemsList from "@/components/items-list/items-list";
-
 import { createData } from "@/firebase/firbase-method";
 import Form from "@/components/form/form";
 
@@ -57,26 +53,6 @@ const HomePage = () => {
 
         <Container className={styles.tableContainer}>
           <ItemsList />
-          {/* <Row>
-            <Column width={{ tablet: 4, laptop: 3 }}>
-              <ItemCard />
-            </Column>
-            <Column width={{ tablet: 4, laptop: 3 }}>
-              <ItemCard />
-            </Column>
-            <Column width={{ tablet: 4, laptop: 3 }}>
-              <ItemCard />
-            </Column>
-            <Column width={{ tablet: 4, laptop: 3 }}>
-              <ItemCard />
-            </Column>
-            <Column width={{ tablet: 4, laptop: 3 }}>
-              <ItemCard />
-            </Column>
-            <Column width={{ tablet: 4, laptop: 3 }}>
-              <ItemCard />
-            </Column>
-          </Row> */}
         </Container>
       </main>
     </>

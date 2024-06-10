@@ -4,18 +4,11 @@ import Modal from "../modal/modal";
 import Typography from "../typography/typography";
 import styles from "./item-card.module.scss";
 import Form from "../form/form";
-import { Item } from "@/firebase/firbase-method";
+import { ItemData, deleteData, updateData } from "@/firebase/firbase-method";
 
-interface ItemCard extends Item {}
+interface ItemCard extends ItemData {}
 
-const ItemCard = ({
-  category,
-  cost,
-  name,
-  price,
-  stock,
-  variant,
-}: ItemCard) => {
+const ItemCard = (props: ItemCard) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
@@ -24,28 +17,36 @@ const ItemCard = ({
         tag="h6"
         tagStyle="bodyLarge"
         variant="bold"
-        text={`Name: ${name}`}
+        text={`Name: ${props.name}`}
       />
 
       <Typography
         tag="p"
         tagStyle="bodyMedium"
-        text={`Category: ${category}`}
+        text={`Category: ${props.category}`}
       />
 
-      {variant && (
+      {props.variant && (
         <Typography
           tag="p"
           tagStyle="bodyMedium"
-          text={`Varaint: ${variant}`}
+          text={`Varaint: ${props.variant}`}
         />
       )}
 
-      <Typography tag="p" tagStyle="bodyMedium" text={`Price: ${price}`} />
+      <Typography
+        tag="p"
+        tagStyle="bodyMedium"
+        text={`Price: ${props.price}`}
+      />
 
-      <Typography tag="p" tagStyle="bodyMedium" text={`Cost: ${cost}`} />
+      <Typography tag="p" tagStyle="bodyMedium" text={`Cost: ${props.cost}`} />
 
-      <Typography tag="p" tagStyle="bodyMedium" text={`Stock: ${stock}`} />
+      <Typography
+        tag="p"
+        tagStyle="bodyMedium"
+        text={`Stock: ${props.stock}`}
+      />
 
       <hr className={styles.devider} />
 
@@ -65,13 +66,14 @@ const ItemCard = ({
           onClose={() => setIsOpenModal(false)}
         >
           <Form
-            onFormSubmit={() => console}
+            onFormSubmit={updateData}
             button={{
               type: "submit",
               variant: "success",
               text: "Update",
               title: "Update item",
             }}
+            item={props}
           />
         </Modal>
 
@@ -81,6 +83,7 @@ const ItemCard = ({
           title="Delete Item"
           variant="danger"
           text="Delete"
+          onClick={() => deleteData(props.id)}
         />
       </div>
     </div>
