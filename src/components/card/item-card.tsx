@@ -17,40 +17,46 @@ const ItemCard = (props: ItemCard) => {
 
   return (
     <div className={styles.component}>
-      <Typography
-        tag="h6"
-        tagStyle="bodyLarge"
-        variant="bold"
-        text={`Name: ${props.name}`}
-      />
+      <div className={styles.content}>
+        <Typography
+          tag="h6"
+          tagStyle="bodyLarge"
+          variant="bold"
+          text={`Name: ${props.name}`}
+        />
 
-      <Typography
-        tag="p"
-        tagStyle="bodyMedium"
-        text={`Category: ${props.category}`}
-      />
-
-      {props.variant && (
         <Typography
           tag="p"
           tagStyle="bodyMedium"
-          text={`Varaint: ${props.variant}`}
+          text={`Category: ${props.category}`}
         />
-      )}
 
-      <Typography
-        tag="p"
-        tagStyle="bodyMedium"
-        text={`Price: ${props.price}`}
-      />
+        {props.variant && (
+          <Typography
+            tag="p"
+            tagStyle="bodyMedium"
+            text={`Varaint: ${props.variant}`}
+          />
+        )}
 
-      <Typography tag="p" tagStyle="bodyMedium" text={`Cost: ${props.cost}`} />
+        <Typography
+          tag="p"
+          tagStyle="bodyMedium"
+          text={`Price: ${props.price}`}
+        />
 
-      <Typography
-        tag="p"
-        tagStyle="bodyMedium"
-        text={`Stock: ${props.stock}`}
-      />
+        <Typography
+          tag="p"
+          tagStyle="bodyMedium"
+          text={`Cost: ${props.cost}`}
+        />
+
+        <Typography
+          tag="p"
+          tagStyle="bodyMedium"
+          text={`Stock: ${props.stock}`}
+        />
+      </div>
 
       <hr className={styles.devider} />
 

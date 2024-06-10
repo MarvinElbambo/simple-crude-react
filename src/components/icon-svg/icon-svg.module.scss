@@ -1,0 +1,12 @@
+@use "styles/setup" as *;
+
+.component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: rem(24);
+    height: rem(24);
+  }
+}

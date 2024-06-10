@@ -2,6 +2,7 @@ import { ReactNode, useState } from "react";
 import styles from "./modal.module.scss";
 import classNames from "classnames";
 import Typography from "../typography/typography";
+import Icon from "../icon-svg/icon-svg";
 
 interface ModalProps {
   children?: ReactNode;
@@ -29,13 +30,12 @@ const Modal = ({ isOpen, children, className, title, onClose }: ModalProps) => {
             text={title}
           />
 
-          <button title="Close button" className={styles.closeButton}>
-            <Typography
-              tagStyle="headlineMedium"
-              variant="light"
-              text="X"
-              onClick={onClose}
-            />
+          <button
+            title="Close button"
+            className={styles.closeButton}
+            onClick={onClose}
+          >
+            <Icon name="Close" />
           </button>
         </header>
 

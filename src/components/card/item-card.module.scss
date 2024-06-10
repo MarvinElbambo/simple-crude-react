@@ -9,6 +9,13 @@
   border-radius: $borderRadius-lg;
   box-shadow: $box-shadow;
 
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    flex-grow: 1;
+  }
+
   .devider {
     background-color: $context-main;
     margin: $spacing-xs;

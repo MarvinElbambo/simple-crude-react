@@ -19,10 +19,13 @@ const Form = ({ className, button, onFormSubmit, item }: FormProps) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) =>
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     onFormSubmit(data, item?.id);
+    reset();
+  };
 
   return (
     <form

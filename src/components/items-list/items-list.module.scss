@@ -1,0 +1,16 @@
+@use "styles/setup" as *;
+
+.component {
+  .emptyItemCard {
+    width: 100%;
+    height: rem(246);
+    padding: $spacing-sm;
+    border-radius: $borderRadius-lg;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $palette-secondary;
+  }
+}
