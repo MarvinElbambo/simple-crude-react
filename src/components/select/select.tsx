@@ -1,54 +1,51 @@
+import { forwardRef } from "react";
 import Typography from "../typography/typography";
 import styles from "./select.module.scss";
 
-interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   errorMessage?: string;
   items?: string[];
   placeholder?: string;
 }
 
-const Select = ({
-  label,
-  errorMessage,
-  items,
-  placeholder,
-  ...props
-}: SelectProps) => {
-  return (
-    <div className={styles.component}>
-      {label && (
-        <Typography
-          className={styles.label}
-          tag="label"
-          tagStyle="bodyMedium"
-          text={label}
-        />
-      )}
+const Select = forwardRef<HTMLSelectElement, SelectProps>(
+  ({ label, errorMessage, items, placeholder, ...props }, ref) => {
+    return (
+      <div className={styles.component}>
+        {label && (
+          <Typography
+            className={styles.label}
+            tag="label"
+            tagStyle="bodyMedium"
+            text={label}
+          />
+        )}
 
-      <select className={styles.select}>
-        <option className={styles.placeholder} value="">
-          {placeholder}
-        </option>
+        <select ref={ref} className={styles.select} {...props}>
+          <option className={styles.placeholder} value="">
+            {placeholder}
+          </option>
 
-        {items &&
-          items.map((item, index) => (
-            <option key={`${item}-${index}`} value={item}>
-              {item}
-            </option>
-          ))}
-      </select>
+          {items &&
+            items.map((item, index) => (
+              <option key={`${item}-${index}`} value={item}>
+                {item}
+              </option>
+            ))}
+        </select>
 
-      {errorMessage && (
-        <Typography
-          className={styles.errorMessage}
-          tagStyle="bodySmall"
-          text="Error message"
-        />
-      )}
-    </div>
-  );
-};
+        {errorMessage && (
+          <Typography
+            className={styles.errorMessage}
+            tagStyle="bodySmall"
+            text={errorMessage}
+          />
+        )}
+      </div>
+    );
+  }
+);
 
 Select.displayName = "Select";
 
