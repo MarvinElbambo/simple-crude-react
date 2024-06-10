@@ -8,10 +8,13 @@
   color: $context-contrast;
 }
 
-.titleContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: $spacing-lg;
-  margin-bottom: $spacing-lg;
+.main {
+  padding: $spacing-lg 0;
+
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+  }
 }

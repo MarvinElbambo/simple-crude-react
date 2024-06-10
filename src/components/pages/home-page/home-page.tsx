@@ -9,6 +9,7 @@ import { createData, updateData } from "@/firebase/firbase-method";
 import Form from "@/components/form/form";
 import { useCreateFormModal, useEditFormModal } from "@/state/store";
 import { Toaster } from "react-hot-toast";
+import classNames from "classnames";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,7 @@ const HomePage = () => {
         </Container>
       </header>
 
-      <main className={inter.className}>
+      <main className={classNames(styles.main, inter.className)}>
         <Container className={styles.titleContainer}>
           <Typography tag="h1" tagStyle="headlineLarge" text="Items" />
 
