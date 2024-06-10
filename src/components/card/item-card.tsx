@@ -3,9 +3,19 @@ import Button from "../button/button";
 import Modal from "../modal/modal";
 import Typography from "../typography/typography";
 import styles from "./item-card.module.scss";
-import EditForm from "../forms/edit-form";
+import Form from "../form/form";
+import { Item } from "@/firebase/firbase-method";
 
-const ItemCard = () => {
+interface ItemCard extends Item {}
+
+const ItemCard = ({
+  category,
+  cost,
+  name,
+  price,
+  stock,
+  variant,
+}: ItemCard) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
@@ -14,18 +24,28 @@ const ItemCard = () => {
         tag="h6"
         tagStyle="bodyLarge"
         variant="bold"
-        text="Name: Fries"
+        text={`Name: ${name}`}
       />
 
-      <Typography tag="p" tagStyle="bodyMedium" text="Category: Side dish" />
+      <Typography
+        tag="p"
+        tagStyle="bodyMedium"
+        text={`Category: ${category}`}
+      />
 
-      <Typography tag="p" tagStyle="bodyMedium" text="Size: Small" />
+      {variant && (
+        <Typography
+          tag="p"
+          tagStyle="bodyMedium"
+          text={`Varaint: ${variant}`}
+        />
+      )}
 
-      <Typography tag="p" tagStyle="bodyMedium" text="Price: 60" />
+      <Typography tag="p" tagStyle="bodyMedium" text={`Price: ${price}`} />
 
-      <Typography tag="p" tagStyle="bodyMedium" text="Cost: 50" />
+      <Typography tag="p" tagStyle="bodyMedium" text={`Cost: ${cost}`} />
 
-      <Typography tag="p" tagStyle="bodyMedium" text="Stock: 85" />
+      <Typography tag="p" tagStyle="bodyMedium" text={`Stock: ${stock}`} />
 
       <hr className={styles.devider} />
 
@@ -44,7 +64,15 @@ const ItemCard = () => {
           title="Update item"
           onClose={() => setIsOpenModal(false)}
         >
-          <EditForm />
+          <Form
+            onFormSubmit={() => console}
+            button={{
+              type: "submit",
+              variant: "success",
+              text: "Update",
+              title: "Update item",
+            }}
+          />
         </Modal>
 
         <Button

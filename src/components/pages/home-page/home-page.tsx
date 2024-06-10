@@ -8,7 +8,10 @@ import Row from "@/components/grid/row/row";
 import Column from "@/components/grid/column/column";
 import ItemCard from "@/components/card/item-card";
 import Modal from "@/components/modal/modal";
-import CreateForm from "@/components/forms/create-form";
+import ItemsList from "@/components/items-list/items-list";
+
+import { createData } from "@/firebase/firbase-method";
+import Form from "@/components/form/form";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,12 +43,21 @@ const HomePage = () => {
             title="Create new item"
             onClose={() => setIsOpenCreateItem(false)}
           >
-            <CreateForm />
+            <Form
+              onFormSubmit={createData}
+              button={{
+                type: "submit",
+                variant: "success",
+                text: "Add",
+                title: "Add item",
+              }}
+            />
           </Modal>
         </Container>
 
         <Container className={styles.tableContainer}>
-          <Row>
+          <ItemsList />
+          {/* <Row>
             <Column width={{ tablet: 4, laptop: 3 }}>
               <ItemCard />
             </Column>
@@ -64,7 +76,7 @@ const HomePage = () => {
             <Column width={{ tablet: 4, laptop: 3 }}>
               <ItemCard />
             </Column>
-          </Row>
+          </Row> */}
         </Container>
       </main>
     </>
